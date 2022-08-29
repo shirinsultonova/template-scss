@@ -1,0 +1,91 @@
+/* MIXINS */
+
+@mixin mobile-first($min){
+    @media only screen and (min-width: $min) {
+      @content;
+    }
+  }
+  
+  @mixin min-max($min, $max){
+    @media only screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+  
+  @mixin desktop-first($max){
+    @media only screen and (max-width: $max) {
+      @content;
+    }
+  }
+  
+  @mixin flex-center($justify:space-between, $align:center){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  
+  @mixin list-unstyle{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  
+  @mixin link-unstyle($display:inline-block) {
+    display: $display;
+    text-decoration: none;
+  }
+  
+
+  
+  
+  @mixin bgImages($position-x, $repeat, $size){
+    background-size: $size;
+    background-position: $position-x center;
+    background-repeat: $repeat;
+  }
+  
+  @mixin  bgRetinaImages{
+    @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      @content;
+    }
+  }
+  
+  @mixin text-styles($size, $line-height,$weight, $text-align, $color) {
+    font-size: $size;
+    line-height: $line-height;
+    font-weight: $weight;
+    text-align: $text-align;
+    color: $color;
+  }
+  
+
+
+  @mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  
+  @mixin bgImages($size, $position, $repeat:no-repeat){
+    background-size: $size;
+    background-position: $position;
+    background-repeat: $repeat;
+  }
+
+  @mixin btn-style($width, $height, $padding, $bgcolor, $border-radius){
+      display: inline-block;
+      width: $width;
+      height: $height;
+      padding: $padding;
+      background-color: $bgcolor;
+      border-radius: $border-radius;
+  }
