@@ -39,12 +39,6 @@
 
   
   
-  @mixin bgImages($position-x, $repeat, $size){
-    background-size: $size;
-    background-position: $position-x center;
-    background-repeat: $repeat;
-  }
-  
   @mixin  bgRetinaImages{
     @media
     only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -67,22 +61,22 @@
   
 
 
-  @mixin center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  @mixin center-block($block, $auto-left, $auto-right) {
+    display: $block;
+    margin-left: $auto-left;
+    margin-right: $auto-right;
   }
 
 
   
-  @mixin bgImages($size, $position, $repeat:no-repeat){
+  @mixin bgImages($size, $position, $repeat){
     background-size: $size;
     background-position: $position;
     background-repeat: $repeat;
   }
 
-  @mixin btn-style($width, $height, $padding, $bgcolor, $border-radius){
-      display: inline-block;
+  @mixin btn-style($inline-block, $width, $height, $padding, $bgcolor, $border-radius){
+      display: $inline-block;
       width: $width;
       height: $height;
       padding: $padding;
